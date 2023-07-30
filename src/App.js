@@ -41,12 +41,11 @@ function App() {
           Learn React and Django
         </a>
         <Person />
-        <Person  />
-        <ul>
+        {/* <ul>
           {people.map(person =>
             <li>{person}</li>
           )}
-        </ul>
+        </ul> */}
       </header>
     </div>
   );
