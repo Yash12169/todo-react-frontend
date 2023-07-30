@@ -1,8 +1,11 @@
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { Person } from './components/Person';
 
 function App() {
+
+  const [textInput, setTextInput] = useState("")
 
   const personObj1 = {
     name: "Joe",
@@ -25,6 +28,15 @@ function App() {
     'Subrahmanyan Chandrasekhar: astrophysicist'
   ]
 
+  const handleChange = (e) => {
+    console.log(e.target.value)
+    setTextInput(e.target.value)
+  }
+
+  const handleClick  = () => {
+    setTextInput("")
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -40,12 +52,17 @@ function App() {
         >
           Learn React and Django
         </a>
-        <Person />
+        {/* <Person /> */}
         {/* <ul>
           {people.map(person =>
             <li>{person}</li>
           )}
         </ul> */}
+        <input type="text" onChange={handleChange} value={textInput} />
+        <button onClick={handleClick}>Reset textInput</button>
+        {textInput}
+        <br />
+        {textInput.length}
       </header>
     </div>
   );
