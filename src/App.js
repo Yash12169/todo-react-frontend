@@ -40,8 +40,8 @@ function App() {
         >
           Learn React and Django
         </a>
-        <Person data={personObj1} show={true} />
-        <Person data={personObj2} show={false} />
+        <Person />
+        <Person  />
         <ul>
           {people.map(person =>
             <li>{person}</li>
