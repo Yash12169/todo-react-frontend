@@ -16,6 +16,15 @@ function App() {
     gender: "female"
   }
 
+  // Array data to render list of people
+  const people = [
+    'Creola Katherine Johnson: mathematician',
+    'Mario José Molina-Pasquel Henríquez: chemist',
+    'Mohammad Abdus Salam: physicist',
+    'Percy Lavon Julian: chemist',
+    'Subrahmanyan Chandrasekhar: astrophysicist'
+  ];
+
   return (
     <div className="App">
       <header className="App-header">
@@ -33,6 +42,11 @@ function App() {
         </a>
         <Person data={personObj1} show={true} />
         <Person data={personObj2} show={false} />
+        <ul>
+          {people.map(person =>
+            <li>{person}</li>
+          )}
+        </ul>
       </header>
     </div>
   );

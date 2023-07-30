@@ -3,7 +3,7 @@ import React from 'react'
 export function Person({ data, show }) {
 
     if (show == false) {
-        return <h1>Data is hidden for security reasons</h1>
+        return null
     }
     else {
         return (
