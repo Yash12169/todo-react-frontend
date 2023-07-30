@@ -1,7 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
+import { Person } from './components/Person';
 
 function App() {
+
+  const personObj1 = {
+    name: "Joe",
+    age: 20,
+    gender: "male"
+  }
+
+  const personObj2 = {
+    name: "Alina",
+    age: 30,
+    gender: "female"
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -15,8 +29,10 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Learn React and Django
         </a>
+        <Person data={personObj1} show={true} />
+        <Person data={personObj2} show={false} />
       </header>
     </div>
   );
