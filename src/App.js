@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { Person } from './components/Person';
+import { Dummy } from './components/Dummy';
 
 function App() {
 
   const [textInput, setTextInput] = useState("")
+  const [showDummy, setShowDummy] = useState(true)
 
   const personObj1 = {
     name: "Joe",
@@ -37,6 +39,38 @@ function App() {
     setTextInput("")
   }
 
+  // const [serverUrl, setServerUrl] = useState('https://localhost:1234');
+
+  // useEffect(() => {
+  // 	const connection = createConnection(serverUrl, roomId);
+  //   connection.connect();
+  // 	return () => {
+  //     connection.disconnect();
+  // 	};
+  // }, [serverUrl, roomId]);
+
+  // mounting or birth phase or first time use
+  // useEffect(()=>{
+
+  // },[])
+
+
+  // useEffect(() => {
+  //   return () => {
+  //     // unmounting or dead phase or unused phase
+  //   }
+  // },[])
+
+  // useEffect(() => {
+  //   // updation phase
+  //   // update component if var1 or var2 changes in the array
+  // },[.....var1, var2])
+
+
+  const handleToggleDummy = () => {
+    setShowDummy(!showDummy)
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -58,11 +92,13 @@ function App() {
             <li>{person}</li>
           )}
         </ul> */}
-        <input type="text" onChange={handleChange} value={textInput} />
-        <button onClick={handleClick}>Reset textInput</button>
-        {textInput}
+        {/* <input type="text" onChange={handleChange} value={textInput} /> */}
+        {/* <button onClick={handleClick}>Reset textInput</button> */}
+        {/* {textInput} */}
         <br />
-        {textInput.length}
+        {/* {textInput.length} */}
+        <button onClick={handleToggleDummy}>{showDummy ? 'Hide' : 'Show'}</button>
+        {showDummy ? <Dummy /> : null}
       </header>
     </div>
   );
