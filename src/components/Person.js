@@ -1,19 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-export function Person({ data, show }) {
+export function Person(/* props */) {
 
-    if (show == false) {
-        return null
-    }
-    else {
-        return (
-            <div>
-                First name : {data.name}
-                <br />
-                Age : {data.age}
-                <br />
-                Gender : {data.gender}
-            </div>
-        )
-    }
+
+    const [age, setAge] = useState(28);
+    const [name, setName] = useState('Taylor')
+    const [todos, setTodos] = useState([])
+
+   return (
+    <>
+    <div>Age {age}</div>
+    <div>Name {name}</div>
+    </>
+   )
 }

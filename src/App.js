@@ -23,7 +23,7 @@ function App() {
     'Mohammad Abdus Salam: physicist',
     'Percy Lavon Julian: chemist',
     'Subrahmanyan Chandrasekhar: astrophysicist'
-  ];
+  ]
 
   return (
     <div className="App">
