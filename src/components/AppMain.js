@@ -14,7 +14,7 @@ export function AppMain() {
     }
 
     const handleSubmit = async () => {
-        const api = `${process.env.REACT_APP_BACKEND_SERVER}/todos/drf/create`
+        const api = `${process.env.REACT_APP_BACKEND_SERVER}/drf/create`
         const response = await axios({
             method: 'post',
             url: api,
@@ -29,7 +29,7 @@ export function AppMain() {
     }
 
     const handleDelete = async (todoId) => {
-        const api = `${process.env.REACT_APP_BACKEND_SERVER}/todos/drf/delete`
+        const api = `${process.env.REACT_APP_BACKEND_SERVER}/drf/delete`
         const response = await axios({
             method: 'delete',
             url: api,
@@ -45,7 +45,7 @@ export function AppMain() {
     useEffect(() => {
         async function fetchData() {
             setLoading(true)
-            const api = `${process.env.REACT_APP_BACKEND_SERVER}/todos/drf/list`
+            const api = `${process.env.REACT_APP_BACKEND_SERVER}/drf/list`
             const response = await axios.get(api)
             setTodoList(response.data)
             setLoading(false)
